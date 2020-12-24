@@ -15,7 +15,7 @@ double Matrix :: GetIndex( int i, int j ) const {
         return 0;
     }
 
-    return A[ j ][ i ];
+    return A[ i ][ j ];
 }
 
 void Matrix :: SetIndex( int i, int j, const double val ){
@@ -26,7 +26,7 @@ void Matrix :: SetIndex( int i, int j, const double val ){
     if( j < 0 or j > n - 1 ){
         return;
     }
-    A[ j ][ i ] = val;
+    A[ i ][ j ] = val;
 }
 
 int Matrix :: GetN( ) const {
@@ -38,14 +38,14 @@ int Matrix :: GetM( ) const {
 }
 
 double ** Matrix :: GetMatrix( void ) const {
-    double ** arr = new double * [ n ];
+    double ** arr = new double * [ m ];
 
-    arr = new double * [ n ];
+    // arr = new double * [ n ];
 
-    for( int column = 0; column < n; column ++ ){
-        arr[ column ] = new double [ m ];
-        for( int row = 0; row < m; row ++ ){
-            arr[ column ][ row ] = A[ column ][ row ];
+    for( int row = 0; row < m; row ++ ){
+        arr[ row ] = new double [ n ];
+        for( int column = 0; column < n; column ++ ){
+            arr[ row ][ column ] = A[ row ][ column ];
         }
     }
 

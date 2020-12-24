@@ -1,13 +1,18 @@
 #ifndef MATRIX__H
 #define MATRIX__H
 
+    # include <algorithm>
+
     class Matrix {
     
         public:
+            Matrix( const Matrix & copy );
             Matrix( const int m_, const int n_ );
             Matrix( );
             ~ Matrix( );
     
+            friend void Swap( Matrix & P, Matrix & Q );
+            
             // PRINT
     
             void Print( void ) const;
@@ -16,7 +21,7 @@
     
             void Identity( const int m_, const int n_ );
             void Zeros( const int m_, const int n_ );
-            void Random( const int m_, const int n_, const unsigned int mod, const int constant );
+            void Random( const int m_, const int n_, const unsigned int mod, const int constant, const int seed );
             void Inverse( const Matrix & B );
     
             void Copy( const Matrix & B );
@@ -54,8 +59,8 @@
             Matrix operator * ( const Matrix & B );
             Matrix operator + ( const Matrix & B );
 
-            void Product( const Matrix & A, const Matrix & B );
-            void Sum( const Matrix & A, const Matrix & B );
+            // void Product( const Matrix & A, const Matrix & B );
+            // void Sum( const Matrix & A, const Matrix & B );
     
             long double Determinant( const Matrix & B ) const; 
  
@@ -63,7 +68,6 @@
             double ** A;
             int n,      // columns
                  m;     // rows
-            
     };
 
 #endif

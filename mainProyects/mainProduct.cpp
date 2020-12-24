@@ -7,46 +7,42 @@ void setByHand( Matrix & A );
 
 int main( void ){
     
-    Matrix A, B;
+    Matrix B, A;
+
+    A.Random( 4, 2, 10, 0, 7 );
+    B.Random( 4, 2, 10, 0, 10 );
+
+    cout << "This is your matrix A\n\n";
+    A.Print( );
+    cout << endl;
     
-    setByHand( A );
-    B.Copy( A );
-
-    cout << "This is your matrix\n\n";
-
+    cout << "This is your matrix B\n\n";
     B.Print( );
-
     cout << endl;
 
+
     char res = 's';
-
     cout << "\nMultiplica por si misma [ s / n (otro) ]: " ;
-    cin >> res;
 
+    cin >> res;
     cout << "Answer: " << res << endl;
 
     while( res == 's' ){
-        A = B;
-        
-        // ( B * A ).Print( );
-
-        A.Print( );
-
+        Matrix C = ( A + B );
+        C.Print( );
         cout << "\nMultiplica por si misma [ s / n (otro) ]: " ;
         cin >> res;
     }
+    
+    // A.Print( );
 
     cout << endl;
 
     // for( int i = 0; i < B.GetN( ); i ++ ){
     //     B = B * A;
-
     //     B.Print( );
-
     //     cout << endl ;
-
     // }
-
     return 0;
 }
 
