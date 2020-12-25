@@ -4,7 +4,7 @@
 int main( ){
     
     Matrix A;
-    // Matrix InvA;
+    Matrix InvA;
 
     A.Random( 3, 3, 10, 0, 10 );
     InvA.Inverse( A );
