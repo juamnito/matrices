@@ -1,0 +1,4 @@
+tests/inverse.cpp: En la función ‘int main()’:
+tests/inverse.cpp:10:5: error: ‘InvA’ no se declaró en este ámbito
+   10 |     InvA.Inverse( A );
+      |     ^~~~

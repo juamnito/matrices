@@ -255,3 +255,30 @@ int Matrix :: TriangularSuperior( ){
     }
     return exchanges;
 }
+
+void Matrix :: SetByHand( ){
+    Delete( );
+    
+    cout << "\n\t[SET-BY-HAND]\n";
+    cout << "ROWS >> ";
+    cin >> m;
+    cout << "COLS >> ";
+    cin >> n;
+
+    SetDimentions( m, n );
+
+    double value = 0;
+
+    for( int rows = 0; rows < GetM( ); rows ++ ){
+        for( int columns = 0; columns < GetN( ); columns ++ ){
+            cout << "\n(Row: " << rows << ", Column: " << columns << ")" << endl;
+            cout << "VALUE >> ";
+            
+            cin >> value;
+
+            SetIndex( rows, columns, value );
+        }
+    }
+
+    cout << "\n[Matrix already set]\n";
+}

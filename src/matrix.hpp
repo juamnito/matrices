@@ -28,6 +28,8 @@
             void Copy( const double ** arr, const int m_, const int n_ );
             void CopyIgnoringColumnsAndRows( const Matrix & B, int ignore_col, int ignore_row );
 
+            void SetByHand( );
+
             void Delete( void ); 
             void SetDimentions( const int m_, const int n_ );
             
