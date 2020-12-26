@@ -22,4 +22,6 @@ echo
 
 # ========== PRODUCT =======================
 
-./product.sh ; 
+./product.sh 
+
+
