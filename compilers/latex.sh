@@ -3,10 +3,12 @@
 
 cd ~/Proyectos/c++/matrices
 
-mkdir executables
+if [ ! -d executables ] ; then
+    mkdir executables
+fi
 
 echo -e "[COMPILING \e[33m\e[1mLATEX\e[0m TEST]"
-if g++ -o executables/latex tests/latexMain.cpp tests/latex.cpp tests/latex.hpp src/matrix.hpp src/matrix.cpp src/elementaryOperations.cpp src/gettersAndSetters.cpp src/operations.cpp src/settingMatrix.cpp > logs/Latex-Log.txt 2>&1 ; then
+if g++ -o executables/latex tests/latexMain.cpp tests/latex.cpp tests/latex.hpp objects/* > logs/Latex-Log.txt 2>&1 ; then
     cat logs/Latex-Log.txt
     echo -e "[\e[34m\e[1mDONE\e[0m]"
 else 
