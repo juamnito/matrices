@@ -1,5 +1,11 @@
-# ========== DETERMINANT  ==================
 cd ~/Proyectos/c++/matrices/compilers
+
+# ========== SRC-OJECTS  ==================
+
+./ob-src.sh
+echo
+
+# ========== DETERMINANT  ==================
 
 ./determinant.sh 
 echo
@@ -17,4 +23,3 @@ echo
 # ========== PRODUCT =======================
 
 ./product.sh ; 
-
