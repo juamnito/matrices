@@ -67,8 +67,8 @@ void GetCommand( std :: string & command_ ){
     std :: cout << "> ";
     std :: cin >> command_;
 
-    std::transform(command_.begin(), command_.end(), command_.begin(),[](unsigned char c){ 
-        return std::tolower(c); 
+    std :: transform( command_.begin( ), command_.end( ), command_.begin( ), [ ]( unsigned char c ){ 
+        return std::tolower( c ); 
     });
 }
 
