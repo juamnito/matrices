@@ -3,6 +3,8 @@
 
 cd ~/Proyectos/c++/matrices
 
+mkdir executables
+
 echo -e "[COMPILING \e[33m\e[1mDETERMINANT\e[0m TEST]"
 if g++ -o executables/determinant tests/determinant.cpp src/matrix.hpp src/matrix.cpp src/settingMatrix.cpp src/gettersAndSetters.cpp src/elementaryOperations.cpp src/operations.cpp > logs/Determinant-Log.txt 2>&1 ; then
     cat logs/Determinant-Log.txt

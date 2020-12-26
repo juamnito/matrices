@@ -3,6 +3,8 @@
 
 cd ~/Proyectos/c++/matrices
 
+mkdir executables
+
 echo -e "[COMPILING \e[33m\e[1mPRODUCT\e[0m TEST]"
 if g++ -o executables/product tests/mainProduct.cpp src/matrix.hpp src/matrix.cpp src/settingMatrix.cpp src/gettersAndSetters.cpp src/elementaryOperations.cpp src/operations.cpp > logs/Product-Log.txt 2>&1 ; then
     cat logs/Product-Log.txt

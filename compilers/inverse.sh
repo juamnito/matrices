@@ -3,6 +3,8 @@
 
 cd ~/Proyectos/c++/matrices
 
+mkdir executables
+
 echo -e "[COMPILING \e[33m\e[1mINVERSE\e[0m TEST]"
 if g++ -o executables/inverse tests/inverse.cpp src/matrix.hpp src/matrix.cpp src/settingMatrix.cpp src/gettersAndSetters.cpp src/elementaryOperations.cpp src/operations.cpp > logs/Inverse-Log.txt 2>&1 ; then
     cat logs/Inverse-Log.txt
