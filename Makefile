@@ -11,7 +11,7 @@ executables/tests/latex.exe: objects/ob-src/ tests/latex.cpp tests/latex.hpp tes
 executables/tests/inverse.exe: objects/ob-src/ tests/inverse.cpp compilers/tests/inverse.sh
 	@./compilers/tests/inverse.sh
 
-executables/tests/determinant.exe: objects/ob-src/  tests/determinant.cpp compilers/tests/determinant.sh
+executables/tests/determinant.exe: objects/ob-src/ tests/determinant.cpp compilers/tests/determinant.sh
 	@./compilers/tests/determinant.sh
 
 # Compilación de objetos
