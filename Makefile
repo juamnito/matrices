@@ -1,21 +1,21 @@
 # Compilación de tests
-tests: executables/tests/product.exe executables/tests/determinant.exe executables/tests/inverse.exe executables/tests/determinant.exe
- 
+executables/tests: executables/tests/product.exe executables/tests/latex.exe executables/tests/inverse.exe executables/tests/determinant.exe
+
 # Reglas para compilación de tests
-executables/tests/product.exe: making-objects tests/mainProduct.cpp compilers/tests/product.sh
+executables/tests/product.exe: objects/ob-src/ tests/mainProduct.cpp compilers/tests/product.sh
 	@./compilers/tests/product.sh
 
-executables/tests/latex.exe: making-objects tests/latex.cpp tests/latex.hpp tests/latexMain.cpp compilers/tests/latex.sh
+executables/tests/latex.exe: objects/ob-src/ tests/latex.cpp tests/latex.hpp tests/latexMain.cpp compilers/tests/latex.sh
 	@./compilers/tests/latex.sh
 
-executables/tests/inverse.exe: making-objects tests/inverse.cpp compilers/tests/inverse.sh
+executables/tests/inverse.exe: objects/ob-src/ tests/inverse.cpp compilers/tests/inverse.sh
 	@./compilers/tests/inverse.sh
 
-executables/tests/determinant.exe: making-objects tests/determinant.cpp compilers/tests/determinant.sh
+executables/tests/determinant.exe: objects/ob-src/  tests/determinant.cpp compilers/tests/determinant.sh
 	@./compilers/tests/determinant.sh
 
 # Compilación de objetos
-making-objects: src/matrix.hpp.gch objects/ob-src/matrix.o objects/ob-src/elementaryOperations.o objects/ob-src/gettersAndSetters.o objects/ob-src/operations.o objects/ob-src/settingMatrix.o 
+objects/ob-src/: src/matrix.hpp.gch objects/ob-src/matrix.o objects/ob-src/elementaryOperations.o objects/ob-src/gettersAndSetters.o objects/ob-src/operations.o objects/ob-src/settingMatrix.o 
 
 # Reglas para compilación de cada objeto
 objects/ob-src/settingMatrix.o: src/settingMatrix.cpp src/matrix.hpp compilers/objs/settingMatrix.sh
