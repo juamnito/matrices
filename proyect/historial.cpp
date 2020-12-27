@@ -38,7 +38,9 @@ void SaveCommand( const string & command_ ){
 }
 
 int main( void ){
-    
+
+    int u = 0;
+    cout << u ; 
     string command = "Hola";
 
     while( command != "adios" ){

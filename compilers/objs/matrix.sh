@@ -25,3 +25,5 @@ if g++ -H -c src/matrix.cpp > logs/src/Matrix-O-Log.txt 2>&1 ; then
     cat logs/src/Matrix-O-Log.txt
     echo -e "   [\e[31m\e[1mFINISHED WITH ERROR\e[0m]" 
 fi
+
+mv matrix.o objects/ob-src/

@@ -1,42 +1,42 @@
-SRC_OBJECTS = objects/ob-src/*
-
 # Compilación de tests
-tests: test-inverse test-determinant test-latex test-product
-
+tests: executables/tests/product.exe executables/tests/determinant.exe executables/tests/inverse.exe executables/tests/determinant.exe
+ 
 # Reglas para compilación de tests
-test-product: making-objects tests/mainProduct.cpp compilers/tests/product.sh
+executables/tests/product.exe: making-objects tests/mainProduct.cpp compilers/tests/product.sh
 	@./compilers/tests/product.sh
 
-test-latex: making-objects tests/latex.cpp tests/latex.hpp tests/latexMain.cpp compilers/tests/latex.sh
+executables/tests/latex.exe: making-objects tests/latex.cpp tests/latex.hpp tests/latexMain.cpp compilers/tests/latex.sh
 	@./compilers/tests/latex.sh
 
-test-inverse: making-objects tests/inverse.cpp compilers/tests/inverse.sh
+executables/tests/inverse.exe: making-objects tests/inverse.cpp compilers/tests/inverse.sh
 	@./compilers/tests/inverse.sh
 
-test-determinant: making-objects tests/determinant.cpp compilers/tests/determinant.sh
+executables/tests/determinant.exe: making-objects tests/determinant.cpp compilers/tests/determinant.sh
 	@./compilers/tests/determinant.sh
 
 # Compilación de objetos
-making-objects: matrix-header.sh settingMatrix.o operations.o gettersAndSetters.o elementaryOperations.o matrix.o clean
+making-objects: src/matrix.hpp.gch objects/ob-src/matrix.o objects/ob-src/elementaryOperations.o objects/ob-src/gettersAndSetters.o objects/ob-src/operations.o objects/ob-src/settingMatrix.o 
 
 # Reglas para compilación de cada objeto
-settingMatrix.o: src/settingMatrix.cpp src/matrix.hpp compilers/objs/settingMatrix.sh
+objects/ob-src/settingMatrix.o: src/settingMatrix.cpp src/matrix.hpp compilers/objs/settingMatrix.sh
 	@./compilers/objs/settingMatrix.sh
 
-operations.o: src/operations.cpp src/matrix.hpp compilers/objs/operations.sh
+objects/ob-src/operations.o: src/operations.cpp src/matrix.hpp compilers/objs/operations.sh
 	@./compilers/objs/operations.sh
 
-gettersAndSetters.o: src/gettersAndSetters.cpp src/matrix.hpp compilers/objs/gettersAndSetters.sh
-	@./compilers/objs/matrix.sh
+objects/ob-src/gettersAndSetters.o: src/gettersAndSetters.cpp src/matrix.hpp compilers/objs/gettersAndSetters.sh
+	@./compilers/objs/gettersAndSetters.sh
 
-elementaryOperations.o: src/elementaryOperations.cpp src/matrix.hpp compilers/objs/elementaryOperations.sh
+objects/ob-src/elementaryOperations.o: src/elementaryOperations.cpp src/matrix.hpp compilers/objs/elementaryOperations.sh
 	@./compilers/objs/elementaryOperations.sh
 
-matrix.o: src/matrix.cpp src/matrix.hpp compilers/objs/matrix.sh
+objects/ob-src/matrix.o: src/matrix.cpp src/matrix.hpp compilers/objs/matrix.sh
 	@./compilers/objs/matrix.sh
 
-matrix-header.sh: src/matrix.hpp compilers/objs/matrix-header.sh
+# Precompiled header
+src/matrix.hpp.gch: src/matrix.hpp compilers/objs/matrix-header.sh
 	@./compilers/objs/matrix-header.sh
 
+# clean stuff
 clean:
-	@./compilers/objs/move-objects.sh
+	rm -rf executables/ objects/

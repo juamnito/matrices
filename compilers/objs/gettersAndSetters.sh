@@ -25,4 +25,4 @@ if g++ -H -c src/gettersAndSetters.cpp > logs/src/GettersAndSetters-O-Log.txt 2>
     echo -e "   [\e[31m\e[1mFINISHED WITH ERROR\e[0m]" 
 fi
 
-
+mv gettersAndSetters.o objects/ob-src/

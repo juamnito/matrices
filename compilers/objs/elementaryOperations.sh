@@ -24,3 +24,5 @@ if g++ -H -c src/elementaryOperations.cpp > logs/src/ElementaryOperations-O-Log.
     cat logs/src/ElementaryOperations-O-Log.txt
     echo -e "   [\e[31m\e[1mFINISHED WITH ERROR\e[0m]" 
 fi
+
+mv elementaryOperations.o objects/ob-src/

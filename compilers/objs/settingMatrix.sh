@@ -25,3 +25,4 @@ if g++ -H -c src/settingMatrix.cpp > logs/src/SettingMatrix-O-Log.txt 2>&1 ; the
     echo -e "   [\e[31m\e[1mFINISHED WITH ERROR\e[0m]" 
 fi
 
+mv settingMatrix.o objects/ob-src/

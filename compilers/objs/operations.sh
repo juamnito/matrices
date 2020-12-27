@@ -24,3 +24,5 @@ if g++ -H -c src/operations.cpp > logs/src/Operations-O-Log.txt 2>&1 ; then
     cat logs/src/Operations-O-Log.txt
     echo -e "   [\e[31m\e[1mFINISHED WITH ERROR\e[0m]" 
 fi
+
+mv operations.o objects/ob-src/
