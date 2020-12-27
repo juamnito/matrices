@@ -15,15 +15,13 @@ fi
 if [ ! -d logs/src ] ; then
     mkdir logs/src
 fi
- 
-# echo -e "[MAKING \e[35m\e[1;4mOBJECT FILES\e[0m]"
-echo -e "\e[1m-- matrix.o\e[0m"
-if g++ -H -c src/matrix.cpp > logs/src/Matrix-O-Log.txt 2>&1 ; then
-    # cat logs/src/Matrix-O-Log.txt
+        
+echo -e "\e[1m-- settingMatrix.o\e[0m"
+if g++ -H -c src/settingMatrix.cpp -o objects/ob-src/settingMatrix.o > logs/src/SettingMatrix-O-Log.txt 2>&1 ; then
+    # cat logs/src/SettingMatrix-O-Log.txt
     echo -e "   [\e[34m\e[1mDONE\e[0m]"
  else 
-    cat logs/src/Matrix-O-Log.txt
+    cat logs/src/SettingMatrix-O-Log.txt
     echo -e "   [\e[31m\e[1mFINISHED WITH ERROR\e[0m]" 
 fi
 
-mv matrix.o objects/ob-src/

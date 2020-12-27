@@ -16,13 +16,12 @@ if [ ! -d logs/src ] ; then
     mkdir logs/src
 fi
         
-echo -e "\e[1m-- operations.o\e[0m"
-if g++ -H -c src/operations.cpp > logs/src/Operations-O-Log.txt 2>&1 ; then
-    # cat logs/src/Operations-O-Log.txt
+echo -e "\e[1m-- gettersAndSetters.o\e[0m"
+if g++ -H -c src/gettersAndSetters.cpp -o objects/ob-src/gettersAndSetters.o > logs/src/GettersAndSetters-O-Log.txt 2>&1 ; then
+    # cat logs/src/GettersAndSetters-O-Log.txt
     echo -e "   [\e[34m\e[1mDONE\e[0m]"
  else 
-    cat logs/src/Operations-O-Log.txt
+    cat logs/src/GettersAndSetters-O-Log.txt
     echo -e "   [\e[31m\e[1mFINISHED WITH ERROR\e[0m]" 
 fi
 
-mv operations.o objects/ob-src/

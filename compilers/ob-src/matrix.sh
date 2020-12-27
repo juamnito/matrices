@@ -15,14 +15,14 @@ fi
 if [ ! -d logs/src ] ; then
     mkdir logs/src
 fi
-        
-echo -e "\e[1m-- elemetaryOperations.o\e[0m"
-if g++ -H -c src/elementaryOperations.cpp > logs/src/ElementaryOperations-O-Log.txt 2>&1 ; then
-    # cat logs/src/ElementaryOperations-O-Log.txt
+ 
+# echo -e "[MAKING \e[35m\e[1;4mOBJECT FILES\e[0m]"
+echo -e "\e[1m-- matrix.o\e[0m"
+if g++ -H -c src/matrix.cpp -o objects/ob-src/matrix.o > logs/src/Matrix-O-Log.txt 2>&1 ; then
+    # cat logs/src/Matrix-O-Log.txt
     echo -e "   [\e[34m\e[1mDONE\e[0m]"
  else 
-    cat logs/src/ElementaryOperations-O-Log.txt
+    cat logs/src/Matrix-O-Log.txt
     echo -e "   [\e[31m\e[1mFINISHED WITH ERROR\e[0m]" 
 fi
 
-mv elementaryOperations.o objects/ob-src/

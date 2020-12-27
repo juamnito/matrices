@@ -18,24 +18,24 @@ executables/tests/determinant.exe: objects/ob-src/  tests/determinant.cpp compil
 objects/ob-src/: src/matrix.hpp.gch objects/ob-src/matrix.o objects/ob-src/elementaryOperations.o objects/ob-src/gettersAndSetters.o objects/ob-src/operations.o objects/ob-src/settingMatrix.o 
 
 # Reglas para compilación de cada objeto
-objects/ob-src/settingMatrix.o: src/settingMatrix.cpp src/matrix.hpp compilers/objs/settingMatrix.sh
-	@./compilers/objs/settingMatrix.sh
+objects/ob-src/settingMatrix.o: src/settingMatrix.cpp src/matrix.hpp compilers/ob-src/settingMatrix.sh
+	@./compilers/ob-src/settingMatrix.sh
 
-objects/ob-src/operations.o: src/operations.cpp src/matrix.hpp compilers/objs/operations.sh
-	@./compilers/objs/operations.sh
+objects/ob-src/operations.o: src/operations.cpp src/matrix.hpp compilers/ob-src/operations.sh
+	@./compilers/ob-src/operations.sh
 
-objects/ob-src/gettersAndSetters.o: src/gettersAndSetters.cpp src/matrix.hpp compilers/objs/gettersAndSetters.sh
-	@./compilers/objs/gettersAndSetters.sh
+objects/ob-src/gettersAndSetters.o: src/gettersAndSetters.cpp src/matrix.hpp compilers/ob-src/gettersAndSetters.sh
+	@./compilers/ob-src/gettersAndSetters.sh
 
-objects/ob-src/elementaryOperations.o: src/elementaryOperations.cpp src/matrix.hpp compilers/objs/elementaryOperations.sh
-	@./compilers/objs/elementaryOperations.sh
+objects/ob-src/elementaryOperations.o: src/elementaryOperations.cpp src/matrix.hpp compilers/ob-src/elementaryOperations.sh
+	@./compilers/ob-src/elementaryOperations.sh
 
-objects/ob-src/matrix.o: src/matrix.cpp src/matrix.hpp compilers/objs/matrix.sh
-	@./compilers/objs/matrix.sh
+objects/ob-src/matrix.o: src/matrix.cpp src/matrix.hpp compilers/ob-src/matrix.sh
+	@./compilers/ob-src/matrix.sh
 
 # Precompiled header
-src/matrix.hpp.gch: src/matrix.hpp compilers/objs/matrix-header.sh
-	@./compilers/objs/matrix-header.sh
+src/matrix.hpp.gch: src/matrix.hpp compilers/ob-src/matrix-header.sh
+	@./compilers/ob-src/matrix-header.sh
 
 # clean stuff
 clean:
