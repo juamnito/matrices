@@ -1,5 +1,5 @@
-#ifndef MATRIX__H
-#define MATRIX__H
+#ifndef MATRIX_H
+#define MATRIX_H
 
     # include <algorithm>
 
@@ -61,9 +61,6 @@
             Matrix operator * ( const Matrix & B );
             Matrix operator + ( const Matrix & B );
 
-            // void Product( const Matrix & A, const Matrix & B );
-            // void Sum( const Matrix & A, const Matrix & B );
-    
             long double Determinant( const Matrix & B ) const; 
  
         private:

@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 
+// type of variable
+#include <typeinfo>
+
 // Lowercase string
 #include <algorithm>
 #include <cctype>
@@ -65,7 +68,7 @@ void MainMenu( ){
 
 void GetCommand( std :: string & command_ ){
     std :: cout << "> ";
-    std :: cin >> command_;
+    getline( std :: cin, command_ );
 
     std :: transform( command_.begin( ), command_.end( ), command_.begin( ), [ ]( unsigned char c ){ 
         return std::tolower( c ); 
@@ -92,8 +95,32 @@ int main( void ){
         else if( command == "main-menu" ){
             MainMenu( );
         }
+        else if( command[ 0 ] == ':' ){
+            command.erase( 0, 1 );
+            system( command.c_str( ) );
+        }
+        else if( command == "" ){
+            continue;
+        }
         else {
+
             std :: cout << "[Error: command \"" << command << "\" unknown]\n";
+            std :: cout << "Do you want to run it in the shell? [ y / N ] ";
+
+            std :: string ans;
+            
+            getline( std :: cin, ans );
+
+            std :: transform( ans.begin( ), ans.end( ), ans.begin( ), [ ]( unsigned char c ){ 
+                return std::tolower( c ); 
+            });
+
+            if( ans == "y" or ans == "yes" ){
+                system( command.c_str( ) );
+            }
+            else if( ans != "n" and ans != "no" ){
+                std :: cout << "Booo bitch!\n";
+            }
         }
     } while( ! Exit( command ) );
        

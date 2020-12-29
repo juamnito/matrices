@@ -53,42 +53,6 @@ Matrix Matrix :: operator + ( const Matrix & B ){
 
 }
 
-// void Matrix :: Product( const Matrix & A, const Matrix & B ){
-// 
-//     if( A.GetN( ) != B.GetM( ) or A.GetN( ) <= 0 or A.GetM( ) <= 0 or B.GetN( ) <= 0 ){
-//         Zeros( 1, 1 );
-//         return;
-//     }
-// 
-//     SetDimentions( A.GetM( ), B.GetN( ) );
-// 
-//     for( int column = 0; column < GetN( ); column ++ ){
-//         for( int row = 0; row < GetM( ); row ++ ){
-//             double sum = 0;
-//             for( int i = 0; i < A.GetN( ); i ++ ){
-//                 sum += A.GetIndex( row, i ) * B.GetIndex( i, column );
-//             }
-//             SetIndex( row, column, sum );
-//         }
-//     }
-// }
-// 
-// void Matrix :: Sum( const Matrix & A, const Matrix & B ){
-//     if( A.GetN( ) != B.GetN( ) or A.GetM( ) != B.GetM( ) or A.GetM( ) <= 0 or A.GetN( ) <= 0 ){
-//         Zeros( 1, 1 );
-//         return;
-//     }
-// 
-//     SetDimentions( A.GetM( ), A.GetN( ) );
-// 
-//     for( int column = 0; column < GetN( ); column ++ ){
-//         for( int row = 0; row < GetM( ); row ++ ){
-//             SetIndex( row, column, A.GetIndex( row, column ) + B.GetIndex( row, column ) );
-//         }
-//     }
-// 
-// }
-
 long double Matrix :: Determinant( const Matrix & B ) const {
     if( B.GetN( ) != B.GetM( ) ){
         return 1;
