@@ -1,7 +1,20 @@
+#ifndef STRING
+#define STRING
+
+    #include <string>
+
+#endif
+
+#ifndef ALGORITHM
+#define ALGORITHM
+
+    # include <algorithm>
+
+#endif
+
 #ifndef MATRIX_H
 #define MATRIX_H
 
-    # include <algorithm>
 
     class Matrix {
     
@@ -13,9 +26,11 @@
     
             friend void Swap( Matrix & P, Matrix & Q );
             
-            // PRINT
+            // PRINTING AND STRING-LATEX
     
             void Print( void ) const;
+            std :: string ToString( void ) const;
+            std :: string ToLatex( void ) const;
     
             // SET MATRIX
     

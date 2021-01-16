@@ -5,7 +5,7 @@
 // type of variable
 #include <typeinfo>
 
-#include "comunications.hpp"
+#include "comunications/comunications.hpp"
 
 int main( void ){
     
@@ -37,7 +37,6 @@ int main( void ){
         else {
             std :: cout << "[Error: command \"" << command << "\" unknown]\n";
             std :: cout << "Do you want to run it in the shell? [ y / N ] ";
-
             std :: string ans;
             
             getline( std :: cin, ans );

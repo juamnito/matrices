@@ -39,4 +39,5 @@ src/matrix.hpp.gch: src/matrix.hpp compilers/ob-src/matrix-header.sh
 
 # clean stuff
 clean:
-	rm -rf executables/ objects/
+	rm -rf executables/ objects/ src/*.gch
+

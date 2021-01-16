@@ -13,7 +13,7 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-    #include "../src/matrix.hpp"
+    #include "../../src/matrix.hpp"
 
 #endif
 

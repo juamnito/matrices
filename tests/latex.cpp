@@ -42,13 +42,3 @@ string toString_LaTeX_matrix( const Matrix & A ){
     
     return matrix;
 }
-
-// void LaTeX_matrix( Matrix & A, string filename ){
-//     FILE * fp;
-// 
-//     fp = fopen( filename, "w" );
-// 
-//     
-// 
-//     fclose( fp ); 
-// }
