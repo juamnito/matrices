@@ -1,0 +1,9 @@
+Matrices actuales
+    Operar con ellas
+        Exponente
+        sumarlas
+        producto
+        inversas
+        Imprimirlas
+            Latex
+            En consola

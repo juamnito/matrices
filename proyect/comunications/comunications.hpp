@@ -17,6 +17,14 @@
 
 #endif
 
+#ifndef CONFIG
+#define CONFIG
+    
+    #include "prompt.hpp"
+    Prompt prompt;
+
+#endif
+
 #ifndef COMUNICATIONS_H
 #define COMUNICATIONS_H
 
@@ -26,5 +34,6 @@
     bool ClearScreen( const std :: string  & command_ );
     void ShowMainMenu( );
     void GetCommand( std :: string & command_ );
+    void Error( std :: string & command );
 
 #endif

@@ -1,0 +1,8 @@
+Configuration
+    configure the prompt
+        colors
+        figures
+
+Save the state
+
+Math

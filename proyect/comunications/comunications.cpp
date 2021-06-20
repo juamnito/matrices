@@ -56,10 +56,31 @@ void ShowMainMenu( ){
 /// Get Command and lower case
 
 void GetCommand( std :: string & command_ ){
-    std :: cout << "> ";
+    std :: cout << prompt.normalString;
     getline( std :: cin, command_ );
 
     std :: transform( command_.begin( ), command_.end( ), command_.begin( ), [ ]( unsigned char c ){ 
         return std::tolower( c ); 
     });
+}
+
+void Error( std :: string & command ){
+    std :: cout << "[Error: command \"" << command << "\" unknown]\n";
+    // std :: cout << "Do you want to run it in the shell? [ y / N ] ";
+    // std :: string ans;
+    // 
+    // getline( std :: cin, ans );
+
+    //     // Convierte a toda la cadena en minúsculas
+    //     
+    // std :: transform( ans.begin( ), ans.end( ), ans.begin( ), [ ]( unsigned char c ){ 
+    //     return std::tolower( c ); 
+    // });
+
+    // if( ans == "y" or ans == "yes" ){
+    //     system( command.c_str( ) );
+    // }
+    // else if( ans != "n" or ans != "no" ){
+    //     std :: cout << "Booo bitch!\n";
+    // }
 }

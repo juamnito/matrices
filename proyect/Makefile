@@ -9,8 +9,8 @@ comunications.o: comunications/comunications.hpp.gch comunications/comunications
 comunications/comunications.hpp.gch: comunications/comunications.hpp
 	g++ -c comunications/comunications.hpp
 
-historial.exe: historial.cpp
-	g++ -o historial.exe historial.cpp
+# historial.exe: historial.cpp
+# 	g++ -o historial.exe historial.cpp
 
 leer-historial.exe: leer-historial.cpp
 	g++ -o leer-historial.exe leer-historial.cpp
